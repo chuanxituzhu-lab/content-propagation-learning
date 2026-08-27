@@ -83,11 +83,11 @@ Platform complexity stays inside plugins; Core understands only capabilities, co
 
 ## 当前版本刻意不做 | Explicit non-goals
 
-MVP 终点是 `Pattern Candidate`，不是 `Living Skill`。当前不包含自动发布、WebUI、用户系统、多 Agent、爆款概率预测或自动修改 Skill。  
-The MVP ends at `Pattern Candidate`, not `Living Skill`. It does not include auto-publishing, WebUI, user accounts, multi-agent orchestration, viral probability prediction, or automatic Skill mutation.
+MVP 的知识终点是 `Pattern Candidate`，不是 `Living Skill`。新增的 WebUI 只是本地人机界面，不改变 Core Contract，也不包含自动发布、用户系统、多 Agent、爆款概率预测或自动修改 Skill。  
+The knowledge endpoint remains `Pattern Candidate`, not `Living Skill`. The new WebUI is only a local human interface; it does not change the Core Contract or add auto-publishing, user accounts, multi-agent orchestration, viral probability prediction, or automatic Skill mutation.
 
-现在的仓库先把“可靠学习”这条底座做实；面向普通创作者的自然语言 Skill，是后续建立在证据之上的上层产品。  
-This repository first makes reliable learning infrastructure real; a natural-language Skill for creators is a later layer built on top of evidence.
+现在的仓库先把“可靠学习”这条底座做实；WebUI 让人可以直接运行和查看证据，面向普通创作者的自然语言 Skill 仍是后续建立在证据之上的上层产品。  
+This repository first makes reliable learning infrastructure real; the WebUI lets people run and inspect evidence directly, while a natural-language Skill for creators remains a later layer built on top of evidence.
 
 ## 冻结边界 | Frozen boundary
 
@@ -111,6 +111,7 @@ plugins/platforms/    YouTube/Bilibili adapters
 plugins/extractors/   LocalVideoExtractor
 plugins/storage/      SQLite Core Store and optional DuckDB analysis
 cli/                  CLI and Integration Proof 01
+webui/                local browser interface / 本地浏览器界面
 data/                 local raw/media/derived artifacts
 patterns/             candidate/validated/deprecated outputs
 tests/                unittest coverage
@@ -125,7 +126,11 @@ py -3.12 -m cli.main init
 py -3.12 -m cli.main plugins
 py -3.12 -m cli.main score --input score-input.json
 py -3.12 -m cli.main proof01
+py -3.12 -m webui.server
 ```
+
+Then open `http://127.0.0.1:8765` in a browser.  
+然后在浏览器打开 `http://127.0.0.1:8765`。
 
 Live metadata verification is explicit because it uses public network sources / 实时验证会访问公开网络：
 

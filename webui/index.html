@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>传播规律学习引擎 | Content Propagation Learning</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-block">
+      <div class="brand-mark" aria-hidden="true"><span>CP</span></div>
+      <div>
+        <p class="eyebrow" data-i18n="brandEyebrow">WORLD LEARNING LOOP · MVP v0.1</p>
+        <h1 data-i18n-html="brandTitle">传播规律学习引擎 <span>Content Propagation Learning</span></h1>
+        <p class="subtitle" data-i18n-html="brandSubtitle">从真实内容传播中学习规律，把证据蒸馏成创作直觉。<br>Learn from real distribution evidence, then distill it into creative intuition.</p>
+      </div>
+    </div>
+    <div class="top-actions">
+      <div class="status-cluster">
+        <span id="service-status" class="status status-waiting">检查中 / Checking</span>
+        <span class="status-detail" data-i18n="statusDetail">LOCAL API · LOOPBACK</span>
+      </div>
+      <button id="language-toggle" class="button button-quiet language-toggle" type="button" aria-pressed="false" aria-label="切换到英文">EN</button>
+      <button id="refresh-btn" class="button button-quiet" data-i18n="refresh" type="button">刷新状态 / Refresh</button>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero-intro">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="heroEyebrow">A RESEARCH WORKBENCH FOR CREATORS</p>
+        <h2 data-i18n="heroTitle">让每一次分析，都留下可追溯的下一步。</h2>
+        <p data-i18n="heroDescription">从公开样本开始，沿着采集、对照、证据到候选的路径推进。你看到的不是“爆款答案”，而是一条能继续验证的学习记录。</p>
+      </div>
+      <div class="hero-signal" aria-label="System boundary">
+        <span class="signal-line"></span>
+        <span data-i18n="observe">OBSERVE</span><b>→</b><span data-i18n="compare">COMPARE</span><b>→</b><span data-i18n="validate">VALIDATE</span>
+      </div>
+    </section>
+
+    <section class="notice">
+      <div class="notice-icon" aria-hidden="true">◎</div>
+      <div><strong data-i18n="evidenceFirst">Evidence first.</strong><span data-i18n="evidenceNotice">这里展示观察、证据与候选，不把单条爆款包装成因果结论。 / This surface separates observations, evidence, and candidates.</span></div>
+      <div class="notice-tags"><span data-i18n="platformCount">2 platforms</span><span data-i18n="objectCount">8 core objects</span><span data-i18n="endpointCount">1 endpoint</span></div>
+    </section>
+
+    <div class="workspace">
+      <aside class="controls panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow" data-i18n="executionEyebrow">01 / EXECUTION</p>
+            <h2 data-i18n-html="executionTitle">运行实验 <span>Run an experiment</span></h2>
+          </div>
+          <span class="panel-number">INPUT</span>
+        </div>
+
+        <div class="action-block">
+          <div class="action-title"><span class="step-index">01</span><h3 data-i18n="contractProof">Contract proof</h3><span class="action-state" data-i18n="safe">SAFE</span></div>
+          <p data-i18n-html="contractDescription">用本地 fixture 验证评分、证据链和 Pattern Candidate。<br>Verify scoring, evidence, and candidate wiring locally.</p>
+          <button id="fixture-btn" class="button button-primary" type="button"><span data-i18n="runFixture">运行 Fixture Proof</span><span class="button-arrow">↗</span></button>
+        </div>
+
+        <div class="action-block live-block">
+          <div class="action-title"><span class="step-index">02</span><h3 data-i18n="liveMetadata">Live metadata</h3><span class="action-state action-state-muted" data-i18n="public">PUBLIC</span></div>
+          <p data-i18n-html="liveDescription">只采集公开 metadata；两个 seed 不足以产生真实规律。<br>Collects public metadata only; two seeds cannot establish a real pattern.</p>
+          <label for="youtube-url"><span>YouTube</span> <span data-i18n="seedUrl">seed URL</span></label>
+          <input id="youtube-url" type="url" value="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+          <label for="bilibili-url"><span>Bilibili</span> <span data-i18n="seedUrl">seed URL</span></label>
+          <input id="bilibili-url" type="url" value="https://www.bilibili.com/video/BV1GJ411x7h7">
+          <button id="live-btn" class="button button-secondary" type="button"><span data-i18n="runLive">运行 Live Proof</span><span class="button-arrow">↗</span></button>
+        </div>
+
+        <div class="boundary-note">
+          <span class="dot"></span>
+          <div><strong data-i18n="localOnly">Local-only interface</strong><br><span data-i18n="localOnlyDescription">默认仅监听 127.0.0.1，不提供登录或公网服务。</span></div>
+          <span class="boundary-code" data-i18n="safeByDefault">SAFE BY DEFAULT</span>
+        </div>
+      </aside>
+
+      <section class="results panel">
+        <div class="panel-heading result-heading">
+          <div>
+            <p class="eyebrow" data-i18n="pipelineEyebrow">02 / EVIDENCE PIPELINE</p>
+            <h2 data-i18n-html="pipelineTitle">从世界到候选 <span>World to candidate</span></h2>
+          </div>
+          <span id="result-mode" class="mode-label">尚未运行 / Not run</span>
+        </div>
+
+        <div class="pipeline" aria-label="Evidence pipeline">
+          <div class="pipeline-step"><b>01</b><span data-i18n-html="platformStep">平台<br><em>Platforms</em></span></div>
+          <div class="pipeline-arrow">→</div>
+          <div class="pipeline-step"><b>02</b><span data-i18n-html="collectStep">采集<br><em>Collect</em></span></div>
+          <div class="pipeline-arrow">→</div>
+          <div class="pipeline-step"><b>03</b><span data-i18n-html="compareStep">对照<br><em>Compare</em></span></div>
+          <div class="pipeline-arrow">→</div>
+          <div class="pipeline-step"><b>04</b><span data-i18n-html="evidenceStep">证据<br><em>Evidence</em></span></div>
+          <div class="pipeline-arrow">→</div>
+          <div class="pipeline-step pipeline-final"><b>05</b><span data-i18n-html="candidateStep">候选<br><em>Candidate</em></span></div>
+        </div>
+
+        <div id="summary" class="summary-grid">
+          <div class="summary-item"><span data-i18n="summaryStatus">状态 / Status</span><strong data-i18n="waiting">等待运行</strong></div>
+          <div class="summary-item"><span data-i18n="summarySamples">样本 / Samples</span><strong>—</strong></div>
+          <div class="summary-item"><span data-i18n="summaryGates">证据 / Gates</span><strong>—</strong></div>
+          <div class="summary-item"><span data-i18n="summaryCandidate">候选 / Candidate</span><strong>—</strong></div>
+        </div>
+
+        <div id="result-content" class="result-content empty-state">
+          <div class="empty-mark">◎</div>
+          <h3 data-i18n="emptyTitle">选择一个实验开始</h3>
+          <p data-i18n="emptyDescription">Choose an experiment to populate the evidence result.</p>
+        </div>
+      </section>
+    </div>
+
+    <section class="plugins panel">
+      <div class="panel-heading">
+        <div>
+          <p class="eyebrow" data-i18n="runtimeEyebrow">03 / RUNTIME / GOVERNANCE</p>
+          <h2 data-i18n-html="runtimeTitle">能力与健康 <span>Capabilities & health</span></h2>
+        </div>
+        <span class="caption"><i class="health-pulse"></i> <span data-i18n="registryCaption">Registry-routed · isolated failures</span></span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th data-i18n="pluginHeader">插件 / Plugin</th><th data-i18n="capabilitiesHeader">能力 / Capabilities</th><th data-i18n="platformsHeader">平台 / Platforms</th><th data-i18n="healthHeader">健康 / Health</th></tr></thead>
+          <tbody id="plugin-table"><tr><td colspan="4" class="table-empty" data-i18n="loadingHealth">正在读取插件状态 / Loading plugin health…</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span data-i18n="footerPrinciples">Local-first · Evidence-first · Plugin-first · LLM-last</span>
+    <span data-i18n="footerEndpoint">Core endpoint: Pattern Candidate</span>
+  </footer>
+  <script src="/app.js"></script>
+</body>
+</html>

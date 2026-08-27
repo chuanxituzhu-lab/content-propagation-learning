@@ -17,6 +17,7 @@ dev = ["pytest>=8"]
 
 [project.scripts]
 world-loop = "cli.main:main"
+world-loop-web = "webui.server:main"
 
 [tool.setuptools.packages.find]
 include = ["core*", "plugins*", "cli*"]
