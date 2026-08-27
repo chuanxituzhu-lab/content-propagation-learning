@@ -1,0 +1,10 @@
+{
+  "contract_version": "world-loop/v0.1",
+  "scoring_version": "world-loop/scoring-v0.1",
+  "platforms": ["youtube", "bilibili"],
+  "discovery_modes": ["keyword", "creator", "seed_url"],
+  "creator_baseline": {"window_size": 20, "minimum_samples": 8},
+  "retention": {"raw_metadata": "append-only", "media": "temporary", "derived": "recomputable"},
+  "llm_policy": {"semantic_comparison": "future-explicit-opt-in", "pattern_merge": "future-explicit-opt-in"}
+}
+
